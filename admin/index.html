@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Admin — Victor's site</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#f6f5f2; --ink:#1f1f1f; --ink-soft:#6b6b6b;
+    --line:#e2e0da; --accent:#c9603e; --green:#2f8a5c; --card:#fff;
+  }
+  *{ box-sizing:border-box; }
+  body{
+    margin:0; background:var(--bg); color:var(--ink);
+    font-family:'Inter', sans-serif;
+    padding:48px 6vw 100px;
+  }
+  h1{
+    font-family:'Space Grotesk', sans-serif;
+    font-size:1.9rem;
+    margin-bottom:6px;
+  }
+  .sub{ color:var(--ink-soft); font-size:.92rem; max-width:60ch; line-height:1.6; margin-bottom:8px; }
+  .note{
+    display:inline-block;
+    font-family:'Space Grotesk', sans-serif;
+    font-size:.75rem;
+    background:#fff1ea;
+    color:var(--accent);
+    padding:6px 12px;
+    border-radius:999px;
+    margin:14px 0 34px;
+  }
+
+  .preview-links{ display:flex; gap:12px; flex-wrap:wrap; margin-bottom:36px; }
+  .preview-links a{
+    font-family:'Space Grotesk', sans-serif;
+    font-size:.82rem; text-decoration:none;
+    color:var(--ink); background:var(--card);
+    border:1px solid var(--line);
+    padding:10px 16px; border-radius:10px;
+    transition: border-color .2s ease, transform .15s ease;
+  }
+  .preview-links a:hover{ border-color:var(--accent); transform:translateY(-2px); }
+
+  .panel{
+    background:var(--card);
+    border:1px solid var(--line);
+    border-radius:16px;
+    max-width:640px;
+    overflow:hidden;
+  }
+  .row{
+    display:flex; align-items:center; justify-content:space-between;
+    padding:18px 22px;
+    border-bottom:1px solid var(--line);
+    gap:20px;
+  }
+  .row:last-child{ border-bottom:none; }
+  .row-text .name{ font-family:'Space Grotesk', sans-serif; font-weight:500; font-size:.95rem; }
+  .row-text .desc{ color:var(--ink-soft); font-size:.82rem; margin-top:3px; }
+
+  .switch{
+    position:relative; width:46px; height:26px; flex:none;
+    background:#d8d5cd; border-radius:999px; cursor:pointer;
+    transition: background .25s ease;
+  }
+  .switch.on{ background:var(--green); }
+  .switch .knob{
+    position:absolute; top:3px; left:3px;
+    width:20px; height:20px; border-radius:50%;
+    background:#fff; box-shadow:0 2px 6px rgba(0,0,0,.2);
+    transition: transform .25s cubic-bezier(.4,1.5,.5,1);
+  }
+  .switch.on .knob{ transform:translateX(20px); }
+
+  .actions{ display:flex; gap:12px; margin-top:28px; flex-wrap:wrap; }
+  .btn{
+    font-family:'Space Grotesk', sans-serif; font-size:.82rem;
+    border:1px solid var(--line); background:var(--card); color:var(--ink);
+    padding:10px 18px; border-radius:10px; cursor:pointer;
+    transition: border-color .2s ease, transform .15s ease;
+  }
+  .btn:hover{ border-color:var(--accent); transform:translateY(-2px); }
+  .btn.primary{ background:var(--ink); color:#fff; border-color:var(--ink); }
+
+  textarea{
+    width:100%; max-width:640px; margin-top:16px;
+    font-family:monospace; font-size:.78rem;
+    background:#fff; border:1px solid var(--line); border-radius:10px;
+    padding:14px; min-height:120px; display:none;
+  }
+
+  .toast{
+    position:fixed; bottom:24px; left:50%; transform:translateX(-50%) translateY(20px);
+    background:var(--ink); color:#fff; font-family:'Space Grotesk', sans-serif;
+    font-size:.8rem; padding:10px 20px; border-radius:999px;
+    opacity:0; transition: opacity .25s ease, transform .25s ease;
+    pointer-events:none;
+  }
+  .toast.show{ opacity:1; transform:translateX(-50%) translateY(0); }
+</style>
+</head>
+<body>
+
+  <h1>Victor's admin panel</h1>
+  <p class="sub">
+    Turn sections on or off across every site version. Changes apply
+    immediately and are shared by <code>card/</code>, <code>personal/</code>,
+    and <code>gallery/</code> — they all read the same settings.
+  </p>
+  <div class="note">⚠️ This is stored in this browser's localStorage only — it won't follow you to another device or browser, and clearing site data resets it.</div>
+
+  <div class="preview-links">
+    <a href="../card/index.html" target="_blank">Open card site ↗</a>
+    <a href="../personal/index.html" target="_blank">Open personal site ↗</a>
+    <a href="../gallery/index.html" target="_blank">Open gallery site ↗</a>
+  </div>
+
+  <div class="panel" id="panel"></div>
+
+  <div class="actions">
+    <button class="btn" id="resetBtn">Reset to defaults</button>
+    <button class="btn primary" id="exportBtn">Export settings as JSON</button>
+  </div>
+  <textarea id="exportBox" readonly></textarea>
+
+  <div class="toast" id="toast"></div>
+
+<script src="../data/victor-data.js"></script>
+<script>
+  const SECTIONS = [
+    { key: "about", name: "About", desc: "Bio, stats, and the intro section." },
+    { key: "prompts", name: "Prompts", desc: "Card-style app clone only — personal/ folds this into the About essay instead." },
+    { key: "interests", name: "Interests", desc: "Interest tags / marquee." },
+    { key: "gallery", name: "Photo gallery", desc: "Photo tiles on personal/'s homepage, and the whole 'Collection' room on gallery/." },
+    { key: "flags", name: "Flags", desc: "Green and red flags, mixed together in one list." },
+    { key: "idealType", name: "Ideal Type", desc: "What he's looking for, plus dealbreakers." },
+    { key: "values", name: "Values", desc: "Direction, family, strengths — the briefer, more serious section." },
+    { key: "friends", name: "Friends Say", desc: "Friend testimonials/reviews." },
+    { key: "faq", name: "FAQ", desc: "Common questions, answered up front." },
+    { key: "schedulingEnabled", name: "Self-serve scheduling", desc: "Off by default — lets people book a time directly without Victor screening first. Read the note in data/victor-data.js before turning this on." },
+  ];
+
+  const panel = document.getElementById("panel");
+
+  function draw() {
+    const vis = window.VictorDB.getVisibility();
+    panel.innerHTML = SECTIONS.map(s => `
+      <div class="row">
+        <div class="row-text">
+          <div class="name">${s.name}</div>
+          <div class="desc">${s.desc}</div>
+        </div>
+        <div class="switch ${vis[s.key] !== false ? "on" : ""}" data-key="${s.key}">
+          <div class="knob"></div>
+        </div>
+      </div>
+    `).join("");
+
+    panel.querySelectorAll(".switch").forEach(sw => {
+      sw.addEventListener("click", () => {
+        const key = sw.dataset.key;
+        const nowOn = !sw.classList.contains("on");
+        window.VictorDB.setVisibility(key, nowOn);
+        sw.classList.toggle("on", nowOn);
+        showToast(`${SECTIONS.find(s => s.key === key).name} ${nowOn ? "shown" : "hidden"}`);
+      });
+    });
+  }
+
+  function showToast(msg) {
+    const t = document.getElementById("toast");
+    t.textContent = msg;
+    t.classList.add("show");
+    clearTimeout(showToast._t);
+    showToast._t = setTimeout(() => t.classList.remove("show"), 1600);
+  }
+
+  document.getElementById("resetBtn").addEventListener("click", () => {
+    window.VictorDB.resetVisibility();
+    draw();
+    showToast("Reset to defaults");
+  });
+
+  document.getElementById("exportBtn").addEventListener("click", () => {
+    const box = document.getElementById("exportBox");
+    box.value = JSON.stringify(window.VictorDB.getVisibility(), null, 2);
+    box.style.display = "block";
+    box.select();
+    showToast("Settings shown below — copy and send back if you want these baked in as defaults");
+  });
+
+  draw();
+</script>
+</body>
+</html>

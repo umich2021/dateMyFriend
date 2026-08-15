@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Friends Say — date Victor</title>
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+
+<div class="blob blob-1"></div>
+<div class="blob blob-2"></div>
+<div class="blob blob-3"></div>
+
+<div class="topnav">
+  <a class="logo" href="index.html">date&nbsp;Victor</a>
+  <nav class="pillnav" id="pillnav"></nav>
+</div>
+
+<div class="wrap">
+  <div class="page-card" id="pageCard"></div>
+  <footer><a href="index.html">← Back to profile</a></footer>
+</div>
+
+<script src="../data/victor-data.js"></script>
+<script src="assets/app.js"></script>
+<script>
+  renderNav("friends.html");
+  const mount = document.getElementById("pageCard");
+  if (!window.VictorDB.isVisible("friends")) {
+    mount.innerHTML = renderHiddenState("Friends Say");
+  } else {
+    const d = window.VictorDB.data;
+    mount.innerHTML = `
+      <div class="page-title">What friends say</div>
+      <div class="page-sub">Character references, unsolicited.</div>
+      ${d.friendReviews.map(r => `
+        <div class="review">
+          <div class="review-quote">"${r.quote}"</div>
+          <div class="review-by">— ${r.name}, ${r.relation}</div>
+        </div>`).join("")}
+    `;
+  }
+</script>
+</body>
+</html>

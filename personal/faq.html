@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FAQ — Victor Ng</title>
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+
+<div class="cursor-dot" id="cursorDot"></div>
+<div class="cursor-ring" id="cursorRing"></div>
+<div id="progress"></div>
+
+<nav id="nav">
+  <a class="brand" href="index.html">VICTOR NG</a>
+  <ul class="navlinks" id="navlinks"></ul>
+</nav>
+
+<section class="page-hero reveal">
+  <h1>FAQ.</h1>
+  <p>The questions people actually ask, answered before you have to.</p>
+</section>
+
+<section id="faqContent"></section>
+
+<footer class="sitefoot"><a href="index.html">← Back home</a></footer>
+
+<script src="../data/victor-data.js"></script>
+<script src="assets/app.js"></script>
+<script>
+  renderNav("faq.html");
+  const mount = document.getElementById("faqContent");
+  if (!window.VictorDB.isVisible("faq")) {
+    mount.innerHTML = renderHiddenState("FAQ");
+  } else {
+    const d = window.VictorDB.data;
+    mount.innerHTML = `<div class="entries-wrap">${d.faq.map(item => `
+      <div class="faq-item reveal">
+        <div class="faq-q">${item.q}</div>
+        <div class="faq-a">${item.a}</div>
+      </div>`).join("")}</div>`;
+  }
+  initChrome();
+</script>
+</body>
+</html>

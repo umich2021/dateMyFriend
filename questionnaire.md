@@ -1,11 +1,36 @@
 # Victor Ng — Date Me Questionnaire
 
 Hey Victor 👋 — fill this out (as much or as little as you're comfortable
-with) and send it back. I'll drop your answers straight into the profile
-page. Everything below has example/placeholder text in it right now — just
+with) and send it back. I'll drop your answers straight into the site.
+Everything below has example/placeholder text in it right now — just
 delete the example and write your real answer underneath each question.
 
 Don't overthink it, first honest answer is usually the best one.
+
+## Before you fill this out
+
+A few things worth knowing before you write anything, based on what
+actually works vs. what doesn't:
+
+- **Specific beats generic, every time.** "I like to have fun" or "I'm
+  chill" says nothing. "I've read the same fantasy series four times" says
+  something.
+- **Avoid negative or exclusionary phrasing** — "no drama," "swipe left
+  if...," listing everything you don't want. Frame things as what you're
+  looking for, not what you're ruling out.
+- **Ideal Type / dealbreakers:** describe what draws you in, don't write a
+  requirements checklist. A couple of real dealbreakers is fine (and
+  honest) — a long list starts to read as picky.
+- **Red flags:** keep them light and specific — real quirks, not actual
+  concerning traits. The whole page shouldn't be a roast of yourself.
+- **Photos matter more than any of the copy below.** Once you send some
+  over: at least one clear face shot (no sunglasses/hat), one with
+  friends, one doing something you actually do, decent lighting, no heavy
+  filters.
+
+This site is closer to a "date me doc" than a Tinder profile — you get
+more room than an app bio, so use it, but the same rule still applies:
+honest and specific beats polished and vague.
 
 ---
 
@@ -32,7 +57,8 @@ Don't overthink it, first honest answer is usually the best one.
 ## 2. Photos
 
 List 1-5 photos you're okay putting on the page. Just send the image files
-separately (or a link) and note which one is the "main" photo.
+separately (or a link) and note which one is the "main" photo. See the
+photo checklist above.
 
 - Main photo: _[attach or link]_
 - Photo 2: _[attach or link]_
@@ -57,7 +83,7 @@ and give a short, specific, real answer — specific beats generic every time.
 - A random fact I love is...
 - I'm looking for...
 - My simple pleasures...
-- Green flags I look for...
+- A goal I'm currently working toward...
 - The way to win me over is...
 - A typical Sunday for me...
 - My most controversial opinion is...
@@ -90,15 +116,155 @@ Coffee snob, Traveling_
 -
 -
 
-## 6. Logistics (not shown publicly, just for me)
+## 6. Flags
+
+These show up together as one mixed list on the site (not split into two
+separate pages) — a person isn't a pro/con sheet, so green and red sit
+side by side. List a mix of both.
+
+**Green flags** — genuinely true, specific things about you (not generic
+"I'm a nice guy" stuff — the more specific, the more it reads as real).
+
+_Example: Texts back within a reasonable amount of time, remembers small
+details from earlier conversations, still close with college friends._
+
+-
+-
+-
+-
+-
+
+**Red flags** — self-aware, a little funny, honest — not actual
+dealbreakers, just the real quirks. This is the part people screenshot,
+so make it good.
+
+_Example: Will absolutely talk your ear off about ramen, overly competitive
+at board games, takes 20 minutes to pick a Netflix show._
+
+-
+-
+-
+-
+-
+
+## 7. Ideal Type & What You're Looking For
+
+- **One or two sentences on who/what you're looking for:**
+  _Example: "Someone who's kind first, funny second, and doesn't take
+  themselves too seriously. Bonus points if you have a go-to karaoke song."_
+
+  >
+
+- **3 traits/tags that describe your ideal match:**
+  _Example: Kind, Funny, Adventurous eater_
+
+  -
+  -
+  -
+
+- **Relationship type you're looking for:**
+  _Example: "Long-term, ideally — not here to keep things casual forever,
+  not rushing to the altar either."_
+
+  >
+
+- **Love language (giving and/or receiving):**
+  _Example: "Quality time, with a side of acts of service."_
+
+  >
+
+- **Dealbreakers — 2-3, kept honest but not harsh:**
+  _Example: Chronic flakiness, no interest in ever traveling, doesn't get
+  along with dogs._
+
+  -
+  -
+  -
+
+## 8. Values
+
+A few honest, brief lines — not an essay. This is the "underneath the
+jokes" section.
+
+- **Where you're headed (career/life direction):**
+  >
+
+- **Family & kids (someday, not in a rush, not interested, etc.):**
+  >
+
+- **How you show up in a relationship:**
+  >
+
+- **Strengths — what you're actually good at:**
+  >
+
+## 9. FAQ
+
+3-4 questions people would probably wonder about, answered up front, in
+your voice. Feel free to swap in your own questions.
+
+_Example questions: "Did your friend really build you a website?" "Are
+you actually single?" "What are you hoping for?" "How do I actually talk
+to you?"_
+
+**Q:**
+>
+**A:**
+>
+
+**Q:**
+>
+**A:**
+>
+
+**Q:**
+>
+**A:**
+>
+
+## 10. Friends' Reviews
+
+Ask 2-3 friends to write one honest sentence about you — character
+references, basically. Send me their name, how they know you, and their
+quote.
+
+_Example:_
+| Name | Relation | Quote |
+|---|---|---|
+| Sarah | College roommate | "Victor once drove two hours to bring me soup when I was sick." |
+
+**Your reviews:**
+| Name | Relation | Quote |
+|---|---|---|
+|  |  |  |
+|  |  |  |
+|  |  |  |
+
+## 11. Contact
+
+- **Email to list:**
+  >
+- **Phone number to list (optional — only if you're comfortable with it
+  being public):**
+  >
+- **Should self-serve scheduling (a direct "book a time" link) be turned
+  on, or should people message you first?**
+  _Default is message-first — it's the safer option since it means you get
+  to screen who's reaching out before anyone locks in a time. Say the word
+  if you'd rather flip on direct scheduling once you're comfortable with
+  that tradeoff._
+  >
+
+## 12. Logistics (not shown publicly, just for me)
 
 - Okay with this page being shared with mutual friends only, or fully public?
   _(circle one / write it)_
 - Any topics or details that are strictly off-limits for the page?
-- Preferred contact method to list (if any) — Instagram handle, email, etc.
-  Note: I will NOT put a phone number in plain text on the page.
+- Anything from sections 7-9 (ideal type, values, FAQ) that feels like
+  too much once you see it live? The admin panel can hide any section —
+  just tell me which ones.
 
 ---
 
-Once you send this back, I'll swap it into the page and send you a preview
+Once you send this back, I'll swap it into the site and send you a preview
 before it goes anywhere public. Thanks for humoring me on this 😄

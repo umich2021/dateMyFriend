@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Values — Victor Ng</title>
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+
+<div class="cursor-dot" id="cursorDot"></div>
+<div class="cursor-ring" id="cursorRing"></div>
+<div id="progress"></div>
+
+<nav id="nav">
+  <a class="brand" href="index.html">VICTOR NG</a>
+  <ul class="navlinks" id="navlinks"></ul>
+</nav>
+
+<section class="page-hero reveal">
+  <h1>Values.</h1>
+  <p>The stuff underneath the jokes — briefly, and honestly.</p>
+</section>
+
+<section id="valuesContent"></section>
+
+<footer class="sitefoot"><a href="index.html">← Back home</a></footer>
+
+<script src="../data/victor-data.js"></script>
+<script src="assets/app.js"></script>
+<script>
+  renderNav("values.html");
+  const mount = document.getElementById("valuesContent");
+  if (!window.VictorDB.isVisible("values")) {
+    mount.innerHTML = renderHiddenState("Values");
+  } else {
+    const d = window.VictorDB.data;
+    mount.innerHTML = `<div class="flag-grid">${d.values.map(v => `
+      <div class="flag-cell neutral reveal">
+        <div class="photo-tile"><span class="emoji">${v.emoji}</span></div>
+        <div>
+          <h3>${v.label}</h3>
+          <p>${v.text}</p>
+        </div>
+      </div>`).join("")}</div>`;
+  }
+  initChrome();
+</script>
+</body>
+</html>

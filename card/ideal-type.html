@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ideal Type — date Victor</title>
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+
+<div class="blob blob-1"></div>
+<div class="blob blob-2"></div>
+<div class="blob blob-3"></div>
+
+<div class="topnav">
+  <a class="logo" href="index.html">date&nbsp;Victor</a>
+  <nav class="pillnav" id="pillnav"></nav>
+</div>
+
+<div class="wrap">
+  <div class="page-card" id="pageCard"></div>
+  <footer><a href="index.html">← Back to profile</a></footer>
+</div>
+
+<script src="../data/victor-data.js"></script>
+<script src="assets/app.js"></script>
+<script>
+  renderNav("ideal-type.html");
+  const mount = document.getElementById("pageCard");
+  if (!window.VictorDB.isVisible("idealType")) {
+    mount.innerHTML = renderHiddenState("Ideal Type");
+  } else {
+    const d = window.VictorDB.data;
+    mount.innerHTML = `
+      <div class="page-title">Ideal Type</div>
+      <div class="page-sub">What he's actually looking for.</div>
+      <div class="char-select">
+        <div class="char-badge"><span>?</span></div>
+        <div class="char-select-name">Player 2</div>
+        <div class="char-select-status">Not yet unlocked</div>
+      </div>
+      <div class="ideal-summary">${d.idealType.summary}</div>
+      <div class="tags">
+        ${d.idealType.tags.map(t => `<span class="tag">${t}</span>`).join("")}
+      </div>
+      <div class="ideal-note">${d.idealType.note}</div>
+      <div class="ideal-meta">
+        <div><strong>Looking for:</strong> ${d.idealType.relationshipType}</div>
+        <div><strong>Love language:</strong> ${d.idealType.loveLanguage}</div>
+      </div>
+      <div class="page-sub" style="margin:22px 0 10px;">Dealbreakers (a few, kept honest)</div>
+      <ul class="flag-list red">
+        ${d.idealType.dealbreakers.map(f => `<li class="flag-item"><span class="dot">🚫</span><span>${f}</span></li>`).join("")}
+      </ul>
+    `;
+  }
+</script>
+</body>
+</html>

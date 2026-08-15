@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Friends Say — Victor Ng</title>
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+
+<div class="cursor-dot" id="cursorDot"></div>
+<div class="cursor-ring" id="cursorRing"></div>
+<div id="progress"></div>
+
+<nav id="nav">
+  <a class="brand" href="index.html">VICTOR NG</a>
+  <ul class="navlinks" id="navlinks"></ul>
+</nav>
+
+<section class="page-hero reveal">
+  <h1>What friends say.</h1>
+  <p>Character references, mostly unsolicited.</p>
+</section>
+
+<section id="friendsContent"></section>
+
+<footer class="sitefoot"><a href="index.html">← Back home</a></footer>
+
+<script src="../data/victor-data.js"></script>
+<script src="assets/app.js"></script>
+<script>
+  renderNav("friends.html");
+  const mount = document.getElementById("friendsContent");
+  if (!window.VictorDB.isVisible("friends")) {
+    mount.innerHTML = renderHiddenState("Friends Say");
+  } else {
+    const d = window.VictorDB.data;
+    mount.innerHTML = `<div class="entries-wrap">${d.friendReviews.map((r, i) => `
+      <div class="entry reveal ${i % 2 === 0 ? "reveal-left" : "reveal-right"}">
+        <div class="entry-index">${r.name}<br><span style="opacity:.6">${r.relation}</span></div>
+        <div>
+          <div class="entry-q">"${r.quote}"</div>
+        </div>
+      </div>`).join("")}</div>`;
+  }
+  initChrome();
+</script>
+</body>
+</html>

@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Victor Ng — An Exhibition</title>
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+
+<div id="progressLine"></div>
+<a class="wordmark" href="#room-entrance">Victor Ng</a>
+<div class="room-counter" id="roomCounter"></div>
+<nav class="room-nav" id="roomNav"></nav>
+
+<section class="room" id="room-entrance">
+  <div class="room-inner">
+    <div class="entrance-eyebrow">An Exhibition</div>
+    <h1 class="entrance-title" id="entranceTitle"></h1>
+    <p class="entrance-sub">A Retrospective, In Six Rooms</p>
+    <div class="entrance-meta" id="entranceMeta"></div>
+  </div>
+  <div class="entrance-cue"><span class="arrow">↓</span> Begin the walkthrough</div>
+</section>
+
+<div id="roomsContainer"></div>
+
+<script src="../data/victor-data.js"></script>
+<script src="assets/app.js"></script>
+<script>
+  const d = window.VictorDB.data;
+  const vis = window.VictorDB;
+
+  document.getElementById("entranceTitle").textContent = d.basics.name;
+  document.getElementById("entranceMeta").innerHTML = `
+    <div><strong>${d.basics.age}</strong> years old</div>
+    <div><strong>${d.basics.location}</strong></div>
+    <div><strong>${d.basics.job}</strong></div>
+  `;
+
+  const rooms = [{ id: "room-entrance", label: "Entrance" }];
+
+  // ---- Room: Self-Portrait (about) ----
+  if (vis.isVisible("about")) {
+    rooms.push({
+      id: "room-self-portrait",
+      label: "Self-Portrait",
+      body: `
+        <div class="portrait-grid">
+          <div>
+            <div class="portrait-plate">${d.basics.name.split(" ").map(w => w[0]).join("")}</div>
+          </div>
+          <div class="portrait-text">
+            ${d.aboutEssay.map(p => `<p>${p}</p>`).join("")}
+            <div class="plaque">
+              <div>Medium<strong>${d.basics.job}</strong></div>
+              <div>Origin<strong>${d.basics.location}</strong></div>
+              <div>Dimensions<strong>${d.basics.height}</strong></div>
+              <div>Edition<strong>${d.basics.age} of, well, one</strong></div>
+            </div>
+          </div>
+        </div>
+      `,
+    });
+  }
+
+  // ---- Room: The Collection (photos) ----
+  if (vis.isVisible("gallery") && d.gallery.length) {
+    rooms.push({
+      id: "room-collection",
+      label: "The Collection",
+      sub: "A small, ongoing series. More plates to be acquired.",
+      body: `
+        <div class="filmstrip-wrap">
+          <div class="filmstrip">
+            ${d.gallery.map((g, i) => `
+              <div class="plate">
+                <div class="plate-frame">${g.emoji}</div>
+                <div class="plate-caption">
+                  <span>${g.label}</span>
+                  <em>Plate ${romanize(i + 1)}</em>
+                </div>
+              </div>`).join("")}
+          </div>
+          <div class="filmstrip-cue">→ scroll to view the full collection</div>
+        </div>
+      `,
+    });
+  }
+
+  // ---- Room: Studies in Contrast (flags, mixed) ----
+  if (vis.isVisible("flags") && d.flags.length) {
+    rooms.push({
+      id: "room-studies",
+      label: "Studies in Contrast",
+      sub: "Observations, unsorted — the good and the questionable, together.",
+      body: `
+        <div class="study-list">
+          ${d.flags.map((f, i) => `
+            <div class="study ${f.type}">
+              <span class="num">${romanize(i + 1)}</span>
+              <p>${f.text}</p>
+            </div>`).join("")}
+        </div>
+      `,
+    });
+  }
+
+  // ---- Room: The Sitter's Brief (ideal type + values) ----
+  if (vis.isVisible("idealType") || vis.isVisible("values")) {
+    let brief = "";
+    if (vis.isVisible("idealType")) {
+      brief += `
+        <p class="brief-quote">"${d.idealType.summary}"</p>
+        <div class="brief-tags">${d.idealType.tags.map(t => `<span>${t}</span>`).join("")}</div>
+      `;
+    }
+    let cols = "";
+    if (vis.isVisible("idealType")) {
+      cols += `
+        <div class="brief-block">
+          <h3>Terms of Acquisition</h3>
+          <div class="brief-line"><strong>Looking for</strong>${d.idealType.relationshipType}</div>
+          <div class="brief-line"><strong>Love language</strong>${d.idealType.loveLanguage}</div>
+          ${d.idealType.dealbreakers.map(x => `<div class="brief-line"><strong>Dealbreaker</strong>${x}</div>`).join("")}
+        </div>`;
+    }
+    if (vis.isVisible("values")) {
+      cols += `
+        <div class="brief-block">
+          <h3>Condition Report</h3>
+          ${d.values.map(v => `<div class="brief-line"><strong>${v.label}</strong>${v.text}</div>`).join("")}
+        </div>`;
+    }
+    rooms.push({
+      id: "room-brief",
+      label: "The Sitter's Brief",
+      sub: "Curatorial notes on what he's hoping to find.",
+      body: `${brief}<div class="brief-cols">${cols}</div>`,
+    });
+  }
+
+  // ---- Room: Correspondence (friends + faq) ----
+  if ((vis.isVisible("friends") && d.friendReviews.length) || (vis.isVisible("faq") && d.faq.length)) {
+    let body = "";
+    if (vis.isVisible("friends") && d.friendReviews.length) {
+      body += `<div class="postcards">${d.friendReviews.map(r => `
+        <div class="postcard">
+          <p>"${r.quote}"</p>
+          <div class="from">— ${r.name}, ${r.relation}</div>
+        </div>`).join("")}</div>`;
+    }
+    if (vis.isVisible("faq") && d.faq.length) {
+      body += `<div class="guide">${d.faq.map(item => `
+        <div class="guide-item">
+          <div class="q">${item.q}</div>
+          <div class="a">${item.a}</div>
+        </div>`).join("")}</div>`;
+    }
+    rooms.push({
+      id: "room-correspondence",
+      label: "Correspondence",
+      sub: "Letters received, and questions answered before they're asked.",
+      body,
+    });
+  }
+
+  // ---- Room: Visitor's Book (contact — always shown) ----
+  const schedulingRow = vis.isVisible("schedulingEnabled") && d.contact.schedulingLink
+    ? `<div class="ledger-line"><span>Schedule</span><a href="${d.contact.schedulingLink}" target="_blank">Book a time →</a></div>`
+    : "";
+  rooms.push({
+    id: "room-visitors",
+    label: "Visitor's Book",
+    sub: "Please sign in before you go.",
+    body: `
+      <div class="ledger">
+        <div class="ledger-line"><span>Email</span><span>${d.contact.email}</span></div>
+        <div class="ledger-line"><span>Phone</span><span>${d.contact.phone}</span></div>
+        ${schedulingRow}
+      </div>
+      <p class="ledger-note"><strong>${d.contact.note}</strong></p>
+    `,
+  });
+
+  // ---- render ----
+  const container = document.getElementById("roomsContainer");
+  container.innerHTML = rooms.slice(1).map((r, i) => `
+    <section class="room" id="${r.id}">
+      <div class="room-inner">
+        <div class="room-kicker">Room ${romanize(i + 1)}</div>
+        <h2 class="room-title">${r.label}</h2>
+        ${r.sub ? `<p class="room-sub">${r.sub}</p>` : ""}
+        ${r.body}
+      </div>
+    </section>
+  `).join("");
+
+  initGalleryChrome(rooms);
+</script>
+</body>
+</html>
