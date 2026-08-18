@@ -1,4 +1,4 @@
-// gallery/ is a single page — no nav between files, just rooms you scroll
+// gallery/ is a single page, no nav between files, just rooms you scroll
 // or click through. This wires the fixed chrome (progress line, room
 // counter, the floor-directory dot-nav) once index.html has built its
 // list of rooms (entrance + whichever content rooms are visible).

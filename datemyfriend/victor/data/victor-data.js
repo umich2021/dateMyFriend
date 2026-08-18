@@ -1,13 +1,12 @@
 /*
-  This is the "database" for the site (gallery/ + admin/) — the single file
-  to edit for both text content and photos. All content below is
-  PLACEHOLDER — swap it once questionnaire.md comes back from Victor.
+  This is the "database" for the site (gallery/ + admin/): the single file
+  to edit for both text content and photos.
 
   Photos: drop real image files into ../photos/ (e.g. photos/portrait.jpg,
   photos/hiking.jpg) and point to them with a path like "photos/portrait.jpg"
   in the `portrait` field below or a `photo` field on a gallery entry. Until
   a `photo`/`portrait` path is set, those spots render an emoji/initials
-  placeholder instead — nothing breaks if photos aren't ready yet.
+  placeholder instead, nothing breaks if photos aren't ready yet.
 
   Why a .js file and not a .json file: these pages are meant to be opened
   directly as local files (double-click, no server). Browsers block
@@ -19,36 +18,31 @@
   const DEFAULT_DATA = {
     basics: {
       name: "Victor Ng",
-      age: 27,
-      location: "Ann Arbor, MI",
+      age: 28,
+      location: "San Francisco, CA",
       job: "Software Engineer",
-      school: "University of Michigan",
+      school: "Rensselaer Polytechnic Institute",
       height: "5'10\"",
     },
 
-    bio: "Half sarcasm, half genuine enthusiasm. Ask me about the best ramen spot in town — I have strong, unsolicited opinions.",
-
     // Used on the Self-Portrait room. Path to a file in ../photos/, e.g.
-    // "photos/portrait.jpg" — leave empty ("") to keep the initials plate.
+    // "photos/portrait.jpg", leave empty ("") to keep the initials plate.
     portrait: "photos/victor-hike-1.jpg",
 
     aboutEssay: [
-      "I build software for a living and spend the rest of my time chasing good food, better playlists, and the occasional personal best on a hiking trail. I laugh easily, cook enthusiastically, and I'm the friend who already has the group chat plans figured out.",
-      "Ask me about the best ramen spot in town and I will have opinions — strong, specific, mildly exhausting ones. I've also been known to leave a party the second someone brings up crypto unprompted, and I will absolutely make you try whatever I just cooked, no exceptions.",
-      "Right now I'm chasing a pretty small goal: beating my own 5k time before the leaves change. That's mostly how I operate — less about grand plans, more about picking something and quietly getting a little better at it. Fresh sheets, a good playlist on a long drive, and a board game I take slightly too seriously round out the rest.",
+      "Software engineer living in San Francisco, by way of Rensselaer Polytechnic Institute. Outside of work: improv, bouldering, hiking, board games, and usually a book in progress.",
+      "A friend of his put it this way: \"The guy you want in a long-term relationship. Peak prefrontal cortex behavior. He communicates, has interesting hobbies, comes from a well-adjusted family, and stays socially active.\"",
     ],
 
     interests: [
-      "Basketball", "Cooking", "Anime", "Hiking",
-      "Board Games", "Photography", "Coffee Snob", "Traveling",
+      "Improv", "Bouldering", "Hiking", "Board Games", "Reading",
     ],
 
     // The Collection room's filmstrip. Each entry can carry a
     // `photo: "photos/whatever.jpg"` (file lives in ../photos/) to show a
     // real image, or a `video: "photos/whatever.mp4"` (+ optional `photo`
-    // used as the poster frame) for inline video — emoji is the fallback
-    // if neither is set. Captions below are best-guess from filenames;
-    // reword freely, and add/remove/reorder entries as more photos come in.
+    // used as the poster frame) for inline video, emoji is the fallback
+    // if neither is set.
     gallery: [
       { emoji: "🌲", label: "Lost in the redwoods", photo: "photos/victor-trees-1.jpg" },
       { emoji: "👯", label: "Hiking with friends", photo: "photos/victor-hiking-friends-1.jpg" },
@@ -59,35 +53,29 @@
       { emoji: "🧗", label: "Sending it", video: "photos/victor-climbing-2.mp4", photo: "photos/victor-climbing-2-poster.jpg" },
     ],
 
-    // Green and red flags live together as one list now — mixed, not
-    // grouped into two separate pages. A person is more than a pro/con
-    // list split in half.
+    // Green and red flags live together as one list now, mixed, not
+    // grouped into two separate pages.
     flags: [
-      { type: "green", text: "Texts back within a reasonable amount of time" },
-      { type: "red", text: "Will absolutely talk your ear off about ramen" },
-      { type: "green", text: "Has a hobby he's genuinely, embarrassingly excited about" },
-      { type: "red", text: "Overly competitive at board games — like, unreasonably so" },
-      { type: "green", text: "Remembers small details from earlier conversations" },
-      { type: "red", text: "Has strong, specific opinions about how to load a dishwasher" },
-      { type: "green", text: "Comfortable ordering for the table" },
-      { type: "red", text: "Takes 20 minutes to pick a Netflix show, then falls asleep" },
-      { type: "green", text: "Still close with his college friends" },
-      { type: "red", text: "Will make you try his cooking experiments, no exceptions" },
-      { type: "green", text: "Cries at the right movies" },
+      { type: "green", text: "Communicates well" },
+      { type: "green", text: "Extremely clean" },
+      { type: "green", text: "Great chef" },
+      { type: "green", text: "Active organizer" },
+      { type: "red", text: "Can't fully relate to Asian trauma" },
+      { type: "red", text: "Can't speak Chinese, only Cantonese" },
     ],
 
     idealType: {
-      // No `photo` field here on purpose — this is someone Victor hasn't
+      // No `photo` field here on purpose, this is someone Victor hasn't
       // met yet, so The Sitter's Brief room renders text only.
-      summary: "Someone who's kind first, funny second, and doesn't take themselves too seriously. Bonus points if you have a go-to karaoke song.",
-      tags: ["Kind", "Funny", "Adventurous eater"],
-      note: "(not a checklist — just what tends to click)",
-      relationshipType: "Long-term, ideally — not here to keep things casual forever, not rushing to the altar either.",
-      loveLanguage: "Quality time, with a side of acts of service.",
+      summary: "Someone who's kind, has a good background, and is willing to try new things.",
+      tags: ["Adventurous", "Intelligent", "Funny"],
+      note: "(not a checklist, just what tends to click)",
+      relationshipType: "Long-term relationship.",
+      loveLanguage: "Quality time.",
       dealbreakers: [
-        "Chronic flakiness — if plans change, just say so",
-        "No interest in ever traveling anywhere",
-        "Doesn't get along with dogs",
+        "Not communicating internal struggles",
+        "No interest in trying different cuisines",
+        "Staying in one place too long",
       ],
     },
 
@@ -95,71 +83,66 @@
       {
         emoji: "🧭",
         label: "Where I'm headed",
-        text: "Deep in a stretch where work is genuinely exciting, but I'm protecting weekends for people, not just my inbox.",
+        text: "Probably an engineer in machine learning, building something worth inventing.",
       },
       {
         emoji: "👶",
         label: "Family & kids",
-        text: "Want kids someday, not in a rush, open to figuring out timing together.",
+        text: "Would like to have them someday, but it's not a priority right now.",
       },
       {
         emoji: "🤝",
         label: "How I show up",
-        text: "Quality time and actually following through beats grand gestures — I'll remember what you said three weeks ago before I remember to buy flowers.",
+        text: "Good food and comforting dates.",
       },
       {
         emoji: "💪",
         label: "Strengths",
-        text: "Staying calm when plans fall apart, cooking under pressure, and making people feel heard when they need to vent.",
+        text: "A good listener and a good speaker.",
       },
     ],
 
     faq: [
       {
-        q: "Wait, did your friend really build you a website?",
-        a: "Unfortunately, yes. I found out when it was already live.",
+        q: "Why is your friend building you a website to date? Red flag?",
+        a: "\"I wanted to see if this would work for my friends: the idea of doing bold, extroverted stuff to find love. It'll help when I have time to date.\" (That's the friend talking, not Victor.)",
       },
       {
-        q: "Is this real? Are you actually single?",
-        a: "Extremely real, and yes.",
+        q: "What does our first date look like?",
+        a: "Do you like arts? I go to this video game music concert that happens every month.",
       },
       {
-        q: "What are you hoping for?",
-        a: "Something that starts with a good conversation and doesn't feel like work.",
-      },
-      {
-        q: "How do I actually talk to you?",
-        a: "Check the Contact page — message first, and we'll figure out a time from there.",
+        q: "Will I love you if you were a worm?",
+        a: "Would you love me if I turned myself into a worm to join you?",
       },
     ],
 
     friendReviews: [
       {
-        name: "Sarah",
-        relation: "College roommate",
-        quote: "Victor once drove two hours to bring me soup when I was sick. 10/10 would recommend.",
+        name: "Jimson",
+        relation: "Friend",
+        quote: "Victor and I are like yin and yang. If you want a stable relationship, he's your guy. If you want a toxic rollercoaster relationship, send them my way. (Kidding. Not kidding.)",
       },
       {
-        name: "Marcus",
-        relation: "Coworker",
-        quote: "He's the guy who remembers everyone's coffee order. Also insufferable at trivia night — in a good way.",
+        name: "Santi",
+        relation: "Friend",
+        quote: "If I was gay, I would want to date you.",
       },
       {
-        name: "Emily",
-        relation: "Childhood friend",
-        quote: "Known him since we were 8. He's exactly as loyal now as he was then, just with better fashion sense.",
+        name: "Evonne",
+        relation: "Parent of two kids, friend of Victor's",
+        quote: "Victor is a great communicator. He's very open and honest, and stands up for himself when it matters, in a way that's warm, caring, and respectful. He has a great balance of strength and kindness. He can be direct without being harsh, and he genuinely cares about the person on the other side of the conversation.",
       },
     ],
 
     contact: {
-      note: "Message first — Victor will follow up to find a time that works. This keeps a real person in the loop before anything gets locked in.",
-      // Deliberately fake-formatted placeholders: 555 is a reserved
-      // fictional exchange in North America, and example.com is a domain
-      // reserved for documentation — neither one is a real, reachable
-      // destination. Replace both with Victor's real info before sharing.
-      phone: "(555) 010-1234",
-      email: "victor.ng@example.com",
-      // Empty by default and gated behind visibility.schedulingEnabled —
+      // No email/phone yet, Victor hasn't sent real contact info. Message
+      // first with a social link instead, so he knows who's reaching out
+      // before any contact info goes up.
+      note: "Message first, with a link to your socials, so Victor knows who he's talking to.",
+      phone: "",
+      email: "",
+      // Empty by default and gated behind visibility.schedulingEnabled,
       // see note there for why self-serve booking is off by default.
       schedulingLink: "",
     },
@@ -181,8 +164,7 @@
       // someone lock in a date with Victor before he's had any chance to
       // screen them, which undercuts the whole friend-vetted premise of
       // this site. Flip this on only once Victor's comfortable with that
-      // tradeoff — until then, contact.html points people to message
-      // first instead.
+      // tradeoff.
       schedulingEnabled: false,
     },
   };

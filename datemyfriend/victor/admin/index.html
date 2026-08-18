@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Admin — Victor's site</title>
+<title>Admin: Victor's site</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
@@ -109,7 +109,7 @@
   <p class="sub">
     Turn sections of the site on or off. Changes apply immediately.
   </p>
-  <div class="note">⚠️ This is stored in this browser's localStorage only — it won't follow you to another device or browser, and clearing site data resets it.</div>
+  <div class="note">⚠️ This is stored in this browser's localStorage only. It won't follow you to another device or browser, and clearing site data resets it.</div>
 
   <div class="preview-links">
     <a href="../index.html" target="_blank">Open site ↗</a>
@@ -128,14 +128,14 @@
 <script src="../data/victor-data.js"></script>
 <script>
   const SECTIONS = [
-    { key: "about", name: "About", desc: "Self-Portrait room — bio, stats, and the intro." },
+    { key: "about", name: "About", desc: "Self-Portrait room: bio, stats, and the intro." },
     { key: "gallery", name: "Photo gallery", desc: "The Collection room's photo filmstrip." },
     { key: "flags", name: "Flags", desc: "Green and red flags, mixed together in one list." },
     { key: "idealType", name: "Ideal Type", desc: "What he's looking for, plus dealbreakers." },
-    { key: "values", name: "Values", desc: "Direction, family, strengths — the briefer, more serious section." },
+    { key: "values", name: "Values", desc: "Direction, family, strengths: the briefer, more serious section." },
     { key: "friends", name: "Friends Say", desc: "Friend testimonials/reviews." },
     { key: "faq", name: "FAQ", desc: "Common questions, answered up front." },
-    { key: "schedulingEnabled", name: "Self-serve scheduling", desc: "Off by default — lets people book a time directly without Victor screening first. Read the note in data/victor-data.js before turning this on." },
+    { key: "schedulingEnabled", name: "Self-serve scheduling", desc: "Off by default. Lets people book a time directly without Victor screening first. Read the note in data/victor-data.js before turning this on." },
   ];
 
   const panel = document.getElementById("panel");
@@ -184,7 +184,7 @@
     box.value = JSON.stringify(window.VictorDB.getVisibility(), null, 2);
     box.style.display = "block";
     box.select();
-    showToast("Settings shown below — copy and send back if you want these baked in as defaults");
+    showToast("Settings shown below. Copy and send back if you want these baked in as defaults");
   });
 
   draw();

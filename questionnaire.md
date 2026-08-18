@@ -1,8 +1,8 @@
-# Victor Ng — Date Me Questionnaire
+# Victor Ng: Date Me Questionnaire
 
-Hey Victor 👋 — fill this out (as much or as little as you're comfortable
+Hey Victor 👋, fill this out (as much or as little as you're comfortable
 with) and send it back. I'll drop your answers straight into the site.
-Everything below has example/placeholder text in it right now — just
+Everything below has example/placeholder text in it right now, just
 delete the example and write your real answer underneath each question.
 
 Don't overthink it, first honest answer is usually the best one.
@@ -19,7 +19,7 @@ Don't overthink it, first honest answer is usually the best one.
   _Example: 27_
 
 - **Location (city is enough):**
-  _Example: Ann Arbor, MI_
+  _Example: Ann Arbor
 
 - **Job / what you do:**
   _Example: Software Engineer_
@@ -42,7 +42,7 @@ photo checklist above.
 
 ## 3. The Bio
 
-One or two sentences that sum you up. Keep it light/fun — this is the first
+One or two sentences that sum you up. Keep it light/fun, this is the first
 thing people read.
 
 _Example: "Half sarcasm, half genuine enthusiasm. Will absolutely talk your
@@ -51,34 +51,11 @@ ear off about the best ramen spot in town."_
 **Your bio:**
 >
 
-## 4. Prompts (pick 3, answer honestly)
 
-Choose any 3 of the prompts below (or swap in your own if none of these fit),
-and give a short, specific, real answer — specific beats generic every time.
-
-- A random fact I love is...
-- I'm looking for...
-- My simple pleasures...
-- A goal I'm currently working toward...
-- The way to win me over is...
-- A typical Sunday for me...
-- My most controversial opinion is...
-- Two truths and a lie...
-- I'll know it's time to leave the party when...
-
-**Prompt 1:** _[which one]_
-> _Example answer: "I'll know it's time to leave the party when — someone
-> starts talking about crypto unprompted."_
-
-**Prompt 2:** _[which one]_
->
-
-**Prompt 3:** _[which one]_
->
 
 ## 5. Interests / Tags
 
-List 6-10 short interest tags (single words or short phrases) — these show
+List 6-10 short interest tags (single words or short phrases), these show
 up as pills on the profile.
 
 _Example: Basketball, Cooking, Anime, Hiking, Board Games, Photography,
@@ -95,11 +72,11 @@ Coffee snob, Traveling_
 ## 6. Flags
 
 These show up together as one mixed list on the site (not split into two
-separate pages) — a person isn't a pro/con sheet, so green and red sit
+separate pages), a person isn't a pro/con sheet, so green and red sit
 side by side. List a mix of both.
 
-**Green flags** — genuinely true, specific things about you (not generic
-"I'm a nice guy" stuff — the more specific, the more it reads as real).
+**Green flags**: genuinely true, specific things about you (not generic
+"I'm a nice guy" stuff, the more specific, the more it reads as real).
 
 _Example: Texts back within a reasonable amount of time, remembers small
 details from earlier conversations, still close with college friends._
@@ -110,7 +87,7 @@ details from earlier conversations, still close with college friends._
 -
 -
 
-**Red flags** — self-aware, a little funny, honest — not actual
+**Red flags**: self-aware, a little funny, honest, not actual
 dealbreakers, just the real quirks. This is the part people screenshot,
 so make it good.
 
@@ -139,7 +116,7 @@ at board games, takes 20 minutes to pick a Netflix show._
   -
 
 - **Relationship type you're looking for:**
-  _Example: "Long-term, ideally — not here to keep things casual forever,
+  _Example: "Long-term, ideally, not here to keep things casual forever,
   not rushing to the altar either."_
 
   >
@@ -149,7 +126,7 @@ at board games, takes 20 minutes to pick a Netflix show._
 
   >
 
-- **Dealbreakers — 2-3, kept honest but not harsh:**
+- **Dealbreakers, 2-3, kept honest but not harsh:**
   _Example: Chronic flakiness, no interest in ever traveling, doesn't get
   along with dogs._
 
@@ -159,7 +136,7 @@ at board games, takes 20 minutes to pick a Netflix show._
 
 ## 8. Values
 
-A few honest, brief lines — not an essay. This is the "underneath the
+A few honest, brief lines, not an essay. This is the "underneath the
 jokes" section.
 
 - **Where you're headed (career/life direction):**
@@ -171,7 +148,7 @@ jokes" section.
 - **How you show up in a relationship:**
   >
 
-- **Strengths — what you're actually good at:**
+- **Strengths, what you're actually good at:**
   >
 
 ## 9. FAQ
@@ -200,7 +177,7 @@ to you?"_
 
 ## 10. Friends' Reviews
 
-Ask 2-3 friends to write one honest sentence about you — character
+Ask 2-3 friends to write one honest sentence about you, character
 references, basically. Send me their name, how they know you, and their
 quote.
 
@@ -220,12 +197,12 @@ _Example:_
 
 - **Email to list:**
   >
-- **Phone number to list (optional — only if you're comfortable with it
+- **Phone number to list (optional, only if you're comfortable with it
   being public):**
   >
 - **Should self-serve scheduling (a direct "book a time" link) be turned
   on, or should people message you first?**
-  _Default is message-first — it's the safer option since it means you get
+  _Default is message-first, it's the safer option since it means you get
   to screen who's reaching out before anyone locks in a time. Say the word
   if you'd rather flip on direct scheduling once you're comfortable with
   that tradeoff._
@@ -237,7 +214,7 @@ _Example:_
   _(circle one / write it)_
 - Any topics or details that are strictly off-limits for the page?
 - Anything from sections 7-9 (ideal type, values, FAQ) that feels like
-  too much once you see it live? The admin panel can hide any section —
+  too much once you see it live? The admin panel can hide any section,
   just tell me which ones.
 
 ---

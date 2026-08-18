@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Victor Ng — An Exhibition</title>
+<title>Victor Ng: An Exhibition</title>
 <link rel="stylesheet" href="assets/style.css">
 </head>
 <body>
@@ -93,7 +93,7 @@
     rooms.push({
       id: "room-studies",
       label: "Studies in Contrast",
-      sub: "Observations, unsorted — the good and the questionable, together.",
+      sub: "Observations, unsorted: the good and the questionable, together.",
       body: `
         <div class="study-list">
           ${d.flags.map((f, i) => `
@@ -147,7 +147,7 @@
       body += `<div class="postcards">${d.friendReviews.map(r => `
         <div class="postcard">
           <p>"${r.quote}"</p>
-          <div class="from">— ${r.name}, ${r.relation}</div>
+          <div class="from">${r.name}, ${r.relation}</div>
         </div>`).join("")}</div>`;
     }
     if (vis.isVisible("faq") && d.faq.length) {
@@ -165,20 +165,20 @@
     });
   }
 
-  // ---- Room: Visitor's Book (contact — always shown) ----
-  const schedulingRow = vis.isVisible("schedulingEnabled") && d.contact.schedulingLink
-    ? `<div class="ledger-line"><span>Schedule</span><a href="${d.contact.schedulingLink}" target="_blank">Book a time →</a></div>`
-    : "";
+  // ---- Room: Visitor's Book (contact, always shown) ----
+  const ledgerRows = [
+    d.contact.email ? `<div class="ledger-line"><span>Email</span><span>${d.contact.email}</span></div>` : "",
+    d.contact.phone ? `<div class="ledger-line"><span>Phone</span><span>${d.contact.phone}</span></div>` : "",
+    vis.isVisible("schedulingEnabled") && d.contact.schedulingLink
+      ? `<div class="ledger-line"><span>Schedule</span><a href="${d.contact.schedulingLink}" target="_blank">Book a time →</a></div>`
+      : "",
+  ].join("");
   rooms.push({
     id: "room-visitors",
     label: "Visitor's Book",
     sub: "Please sign in before you go.",
     body: `
-      <div class="ledger">
-        <div class="ledger-line"><span>Email</span><span>${d.contact.email}</span></div>
-        <div class="ledger-line"><span>Phone</span><span>${d.contact.phone}</span></div>
-        ${schedulingRow}
-      </div>
+      ${ledgerRows ? `<div class="ledger">${ledgerRows}</div>` : ""}
       <p class="ledger-note"><strong>${d.contact.note}</strong></p>
     `,
   });
