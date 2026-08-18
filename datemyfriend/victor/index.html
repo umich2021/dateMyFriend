@@ -75,7 +75,7 @@
           <div class="filmstrip">
             ${d.gallery.map((g, i) => `
               <div class="plate">
-                <div class="plate-frame">${g.photo ? `<img src="${g.photo}" alt="${g.label}">` : g.emoji}</div>
+                <div class="plate-frame">${g.video ? `<video src="${g.video}" ${g.photo ? `poster="${g.photo}"` : ""} controls playsinline preload="metadata"></video>` : g.photo ? `<img src="${g.photo}" alt="${g.label}">` : g.emoji}</div>
                 <div class="plate-caption">
                   <span>${g.label}</span>
                   <em>Plate ${romanize(i + 1)}</em>

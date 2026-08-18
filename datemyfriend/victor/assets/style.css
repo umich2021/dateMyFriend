@@ -161,7 +161,7 @@ a{ color:inherit; }
   box-shadow:0 24px 48px -26px rgba(0,0,0,.3);
   overflow:hidden;
 }
-.plate-frame img{ width:100%; height:100%; object-fit:cover; }
+.plate-frame img, .plate-frame video{ width:100%; height:100%; object-fit:cover; }
 .plate-caption{
   margin-top:14px; display:flex; justify-content:space-between; align-items:baseline; gap:12px;
 }

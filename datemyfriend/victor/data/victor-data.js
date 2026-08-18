@@ -30,7 +30,7 @@
 
     // Used on the Self-Portrait room. Path to a file in ../photos/, e.g.
     // "photos/portrait.jpg" — leave empty ("") to keep the initials plate.
-    portrait: "",
+    portrait: "photos/victor-hike-1.jpg",
 
     aboutEssay: [
       "I build software for a living and spend the rest of my time chasing good food, better playlists, and the occasional personal best on a hiking trail. I laugh easily, cook enthusiastically, and I'm the friend who already has the group chat plans figured out.",
@@ -43,16 +43,25 @@
       "Board Games", "Photography", "Coffee Snob", "Traveling",
     ],
 
-    // The Collection room's filmstrip. Add `photo: "photos/whatever.jpg"`
-    // to an entry (file lives in ../photos/) to show a real image instead
-    // of the emoji placeholder — emoji stays as a fallback either way.
+    // The Collection room's filmstrip. Each entry can carry a
+    // `photo: "photos/whatever.jpg"` (file lives in ../photos/) to show a
+    // real image, or a `video: "photos/whatever.mp4"` (+ optional `photo`
+    // used as the poster frame) for inline video — emoji is the fallback
+    // if neither is set. Captions below are best-guess from filenames;
+    // reword freely, and add/remove/reorder entries as more photos come in.
     gallery: [
-      { emoji: "📸", label: "Main photo", photo: "" },
-      { emoji: "🥾", label: "Doing the thing", photo: "" },
-      { emoji: "👯", label: "With friends", photo: "" },
-      { emoji: "😄", label: "Candid", photo: "" },
-      { emoji: "🍜", label: "Ramen opinions, mid-rant", photo: "" },
-      { emoji: "🎲", label: "Taking a board game too seriously", photo: "" },
+      { emoji: "🌲", label: "Lost in the redwoods", photo: "photos/victor-trees-1.jpg" },
+      { emoji: "🌲", label: "Same trail, better light", photo: "photos/victor-trees-2.jpg" },
+      { emoji: "🥾", label: "Solo hike, take two", photo: "photos/victor-hike-2.jpg" },
+      { emoji: "🍽️", label: "Dinner with friends", photo: "photos/victor-friends-dinner.jpg" },
+      { emoji: "👯", label: "Hiking with friends", photo: "photos/victor-hiking-friends-1.jpg" },
+      { emoji: "👯", label: "Hiking with friends, cont'd", photo: "photos/victor-hiking-friends-2.jpg" },
+      { emoji: "👯", label: "Still hiking, still smiling", photo: "photos/victor-hiking-friends-3.jpg" },
+      { emoji: "🎤", label: "At a concert", photo: "photos/victor-concert-1.jpg" },
+      { emoji: "🎤", label: "Concert, encore", photo: "photos/victor-concert-2.jpg" },
+      { emoji: "🚗", label: "Road trip candid", photo: "photos/victor-in-car.jpg" },
+      { emoji: "🧗", label: "Working a problem", video: "photos/victor-climbing-1.mp4", photo: "photos/victor-climbing-1-poster.jpg" },
+      { emoji: "🧗", label: "Sending it", video: "photos/victor-climbing-2.mp4", photo: "photos/victor-climbing-2-poster.jpg" },
     ],
 
     // Green and red flags live together as one list now — mixed, not

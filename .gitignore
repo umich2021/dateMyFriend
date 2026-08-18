@@ -1,0 +1,3 @@
+# Raw photo/video dumps — originals stay local only. Processed, web-sized
+# copies that the site actually uses live in datemyfriend/victor/photos/.
+/Photos/

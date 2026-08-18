@@ -7,30 +7,6 @@ delete the example and write your real answer underneath each question.
 
 Don't overthink it, first honest answer is usually the best one.
 
-## Before you fill this out
-
-A few things worth knowing before you write anything, based on what
-actually works vs. what doesn't:
-
-- **Specific beats generic, every time.** "I like to have fun" or "I'm
-  chill" says nothing. "I've read the same fantasy series four times" says
-  something.
-- **Avoid negative or exclusionary phrasing** — "no drama," "swipe left
-  if...," listing everything you don't want. Frame things as what you're
-  looking for, not what you're ruling out.
-- **Ideal Type / dealbreakers:** describe what draws you in, don't write a
-  requirements checklist. A couple of real dealbreakers is fine (and
-  honest) — a long list starts to read as picky.
-- **Red flags:** keep them light and specific — real quirks, not actual
-  concerning traits. The whole page shouldn't be a roast of yourself.
-- **Photos matter more than any of the copy below.** Once you send some
-  over: at least one clear face shot (no sunglasses/hat), one with
-  friends, one doing something you actually do, decent lighting, no heavy
-  filters.
-
-This site is closer to a "date me doc" than a Tinder profile — you get
-more room than an app bio, so use it, but the same rule still applies:
-honest and specific beats polished and vague.
 
 ---
 
