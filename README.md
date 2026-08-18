@@ -8,25 +8,30 @@ art-exhibition-style walkthrough.**
 
 ## Structure
 
+Served at `projects.jimsonyang.com/datemyfriend/victor/` — everything below
+lives under `datemyfriend/victor/` in this repo so the URL path matches.
+
 ```
-data/
-  victor-data.js      ← the "database" — all content + section visibility flags
-card/                  ← secondary: Tinder/Hinge/Bumble-style version (swipe card)
-  index.html           ← home: profile card, like/nope/star buttons
-  prompts.html, flags.html, ideal-type.html, friends.html, contact.html
-  assets/style.css, assets/app.js   ← includes a palette switcher (5 color/font stories)
-personal/              ← primary: "date me doc" style (editorial one-pager per section)
-  index.html           ← home: hero, long-form About essay, friend-quote teaser, photo gallery, interests, contact CTA
-  flags.html, ideal-type.html, values.html, friends.html, faq.html, contact.html
-  assets/style.css, assets/app.js   ← includes a style switcher (5 full style directions) + kawaii mascot
-gallery/               ← standalone: single-page art-exhibition walkthrough
-  index.html           ← one page, six full-viewport "rooms" you scroll or click through
-  assets/style.css, assets/app.js
-admin/
-  index.html           ← toggle panel — turn any section on/off for every site at once (not linked from any public site — open it directly)
-questionnaire.md        ← send this to Victor to get his real answers
+CNAME                    ← GitHub Pages custom domain: projects.jimsonyang.com
+questionnaire.md          ← send this to Victor to get his real answers
 TODO.md
 README.md
+datemyfriend/victor/      ← everything below is served at /datemyfriend/victor/
+  data/
+    victor-data.js         ← the "database" — all content + section visibility flags
+  card/                    ← secondary: Tinder/Hinge/Bumble-style version (swipe card)
+    index.html             ← home: profile card, like/nope/star buttons
+    prompts.html, flags.html, ideal-type.html, friends.html, contact.html
+    assets/style.css, assets/app.js   ← includes a palette switcher (5 color/font stories)
+  personal/                ← primary: "date me doc" style (editorial one-pager per section)
+    index.html             ← home: hero, long-form About essay, friend-quote teaser, photo gallery, interests, contact CTA
+    flags.html, ideal-type.html, values.html, friends.html, faq.html, contact.html
+    assets/style.css, assets/app.js   ← includes a style switcher (5 full style directions) + kawaii mascot
+  gallery/                 ← standalone: single-page art-exhibition walkthrough
+    index.html             ← one page, six full-viewport "rooms" you scroll or click through
+    assets/style.css, assets/app.js
+  admin/
+    index.html             ← toggle panel — turn any section on/off for every site at once (not linked from any public site — open it directly)
 ```
 
 Every section is its own real page on `card/`/`personal/`, not an anchor
