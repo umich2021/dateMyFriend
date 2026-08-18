@@ -51,14 +51,9 @@
     // reword freely, and add/remove/reorder entries as more photos come in.
     gallery: [
       { emoji: "🌲", label: "Lost in the redwoods", photo: "photos/victor-trees-1.jpg" },
-      { emoji: "🌲", label: "Same trail, better light", photo: "photos/victor-trees-2.jpg" },
-      { emoji: "🥾", label: "Solo hike, take two", photo: "photos/victor-hike-2.jpg" },
-      { emoji: "🍽️", label: "Dinner with friends", photo: "photos/victor-friends-dinner.jpg" },
       { emoji: "👯", label: "Hiking with friends", photo: "photos/victor-hiking-friends-1.jpg" },
-      { emoji: "👯", label: "Hiking with friends, cont'd", photo: "photos/victor-hiking-friends-2.jpg" },
-      { emoji: "👯", label: "Still hiking, still smiling", photo: "photos/victor-hiking-friends-3.jpg" },
+      { emoji: "🍽️", label: "Dinner with friends", photo: "photos/victor-friends-dinner.jpg" },
       { emoji: "🎤", label: "At a concert", photo: "photos/victor-concert-1.jpg" },
-      { emoji: "🎤", label: "Concert, encore", photo: "photos/victor-concert-2.jpg" },
       { emoji: "🚗", label: "Road trip candid", photo: "photos/victor-in-car.jpg" },
       { emoji: "🧗", label: "Working a problem", video: "photos/victor-climbing-1.mp4", photo: "photos/victor-climbing-1-poster.jpg" },
       { emoji: "🧗", label: "Sending it", video: "photos/victor-climbing-2.mp4", photo: "photos/victor-climbing-2-poster.jpg" },
