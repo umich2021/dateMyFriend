@@ -40,11 +40,11 @@
 
   const rooms = [{ id: "room-entrance", label: "Entrance" }];
 
-  // ---- Room: Self-Portrait (about) ----
+  // ---- Room: About ----
   if (vis.isVisible("about")) {
     rooms.push({
       id: "room-self-portrait",
-      label: "Self-Portrait",
+      label: "About",
       body: `
         <div class="portrait-grid">
           <div>
@@ -53,10 +53,10 @@
           <div class="portrait-text">
             ${d.aboutEssay.map(p => `<p>${p}</p>`).join("")}
             <div class="plaque">
-              <div>Medium<strong>${d.basics.job}</strong></div>
-              <div>Origin<strong>${d.basics.location}</strong></div>
-              <div>Dimensions<strong>${d.basics.height}</strong></div>
-              <div>Edition<strong>${d.basics.age} of, well, one</strong></div>
+              <div>Age<strong>${d.basics.age}</strong></div>
+              <div>Job<strong>${d.basics.job}</strong></div>
+              <div>Location<strong>${d.basics.location}</strong></div>
+              <div>Height<strong>${d.basics.height}</strong></div>
             </div>
           </div>
         </div>
@@ -69,7 +69,7 @@
     rooms.push({
       id: "room-collection",
       label: "The Collection",
-      sub: "A small, ongoing series. More plates to be acquired.",
+      sub: "A few photos, more to come.",
       body: `
         <div class="filmstrip-wrap">
           <div class="filmstrip">
@@ -88,25 +88,28 @@
     });
   }
 
-  // ---- Room: Studies in Contrast (flags, mixed) ----
+  // ---- Room: Green Flags & Red Flags ----
   if (vis.isVisible("flags") && d.flags.length) {
     rooms.push({
       id: "room-studies",
-      label: "Studies in Contrast",
-      sub: "Observations, unsorted: the good and the questionable, together.",
+      label: "Green Flags & Red Flags",
+      sub: "Green is the genuinely good stuff. Red is more of a fun quirk than an actual warning.",
       body: `
         <div class="study-list">
           ${d.flags.map((f, i) => `
             <div class="study ${f.type}">
               <span class="num">${romanize(i + 1)}</span>
-              <p>${f.text}</p>
+              <div>
+                <span class="flag-tag ${f.type}">${f.type === "green" ? "Green flag" : "Red flag"}</span>
+                <p>${f.text}</p>
+              </div>
             </div>`).join("")}
         </div>
       `,
     });
   }
 
-  // ---- Room: The Sitter's Brief (ideal type + values) ----
+  // ---- Room: Ideal Type & Values ----
   if (vis.isVisible("idealType") || vis.isVisible("values")) {
     let brief = "";
     if (vis.isVisible("idealType")) {
@@ -119,7 +122,7 @@
     if (vis.isVisible("idealType")) {
       cols += `
         <div class="brief-block">
-          <h3>Terms of Acquisition</h3>
+          <h3>What He's Looking For</h3>
           <div class="brief-line"><strong>Looking for</strong>${d.idealType.relationshipType}</div>
           <div class="brief-line"><strong>Love language</strong>${d.idealType.loveLanguage}</div>
           ${d.idealType.dealbreakers.map(x => `<div class="brief-line"><strong>Dealbreaker</strong>${x}</div>`).join("")}
@@ -128,19 +131,19 @@
     if (vis.isVisible("values")) {
       cols += `
         <div class="brief-block">
-          <h3>Condition Report</h3>
+          <h3>His Values</h3>
           ${d.values.map(v => `<div class="brief-line"><strong>${v.label}</strong>${v.text}</div>`).join("")}
         </div>`;
     }
     rooms.push({
       id: "room-brief",
-      label: "The Sitter's Brief",
-      sub: "Curatorial notes on what he's hoping to find.",
+      label: "Ideal Type & Values",
+      sub: "What he's looking for in someone, and where he stands.",
       body: `${brief}<div class="brief-cols">${cols}</div>`,
     });
   }
 
-  // ---- Room: Correspondence (friends + faq) ----
+  // ---- Room: Friends & FAQ ----
   if ((vis.isVisible("friends") && d.friendReviews.length) || (vis.isVisible("faq") && d.faq.length)) {
     let body = "";
     if (vis.isVisible("friends") && d.friendReviews.length) {
@@ -159,13 +162,13 @@
     }
     rooms.push({
       id: "room-correspondence",
-      label: "Correspondence",
-      sub: "Letters received, and questions answered before they're asked.",
+      label: "Friends & FAQ",
+      sub: "What his friends say about him, and answers to what you're probably wondering.",
       body,
     });
   }
 
-  // ---- Room: Visitor's Book (contact, always shown) ----
+  // ---- Room: Contact (always shown) ----
   const ledgerRows = [
     d.contact.email ? `<div class="ledger-line"><span>Email</span><span>${d.contact.email}</span></div>` : "",
     d.contact.phone ? `<div class="ledger-line"><span>Phone</span><span>${d.contact.phone}</span></div>` : "",
@@ -175,8 +178,8 @@
   ].join("");
   rooms.push({
     id: "room-visitors",
-    label: "Visitor's Book",
-    sub: "Please sign in before you go.",
+    label: "Contact",
+    sub: "How to reach him.",
     body: `
       ${ledgerRows ? `<div class="ledger">${ledgerRows}</div>` : ""}
       <p class="ledger-note"><strong>${d.contact.note}</strong></p>

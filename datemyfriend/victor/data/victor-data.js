@@ -136,11 +136,8 @@
     ],
 
     contact: {
-      // No email/phone yet, Victor hasn't sent real contact info. Message
-      // first with a social link instead, so he knows who's reaching out
-      // before any contact info goes up.
       note: "Message first, with a link to your socials, so Victor knows who he's talking to.",
-      phone: "",
+      phone: "(732) 299-5373",
       email: "",
       // Empty by default and gated behind visibility.schedulingEnabled,
       // see note there for why self-serve booking is off by default.
