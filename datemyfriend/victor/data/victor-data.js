@@ -66,10 +66,11 @@
 
     idealType: {
       // No `photo` field here on purpose, this is someone Victor hasn't
-      // met yet, so The Sitter's Brief room renders text only.
+      // met yet, so the Ideal Type & Values room renders text only.
       summary: "Someone who's kind, has a good background, and is willing to try new things.",
       tags: ["Adventurous", "Intelligent", "Funny"],
       note: "(not a checklist, just what tends to click)",
+      interestedIn: "Women",
       relationshipType: "Long-term relationship.",
       loveLanguage: "Quality time.",
       dealbreakers: [

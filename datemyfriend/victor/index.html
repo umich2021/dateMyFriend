@@ -17,7 +17,6 @@
   <div class="room-inner">
     <div class="entrance-eyebrow">An Exhibition</div>
     <h1 class="entrance-title" id="entranceTitle"></h1>
-    <p class="entrance-sub">A Retrospective, In Six Rooms</p>
     <div class="entrance-meta" id="entranceMeta"></div>
   </div>
   <div class="entrance-cue"><span class="arrow">↓</span> Begin the walkthrough</div>
@@ -69,7 +68,6 @@
     rooms.push({
       id: "room-collection",
       label: "The Collection",
-      sub: "A few photos, more to come.",
       body: `
         <div class="filmstrip-wrap">
           <div class="filmstrip">
@@ -93,7 +91,6 @@
     rooms.push({
       id: "room-studies",
       label: "Green Flags & Red Flags",
-      sub: "Green is the genuinely good stuff. Red is more of a fun quirk than an actual warning.",
       body: `
         <div class="study-list">
           ${d.flags.map((f, i) => `
@@ -123,6 +120,7 @@
       cols += `
         <div class="brief-block">
           <h3>What He's Looking For</h3>
+          <div class="brief-line"><strong>Interested in</strong>${d.idealType.interestedIn}</div>
           <div class="brief-line"><strong>Looking for</strong>${d.idealType.relationshipType}</div>
           <div class="brief-line"><strong>Love language</strong>${d.idealType.loveLanguage}</div>
           ${d.idealType.dealbreakers.map(x => `<div class="brief-line"><strong>Dealbreaker</strong>${x}</div>`).join("")}
@@ -138,7 +136,6 @@
     rooms.push({
       id: "room-brief",
       label: "Ideal Type & Values",
-      sub: "What he's looking for in someone, and where he stands.",
       body: `${brief}<div class="brief-cols">${cols}</div>`,
     });
   }
@@ -163,7 +160,6 @@
     rooms.push({
       id: "room-correspondence",
       label: "Friends & FAQ",
-      sub: "What his friends say about him, and answers to what you're probably wondering.",
       body,
     });
   }
@@ -179,7 +175,6 @@
   rooms.push({
     id: "room-visitors",
     label: "Contact",
-    sub: "How to reach him.",
     body: `
       ${ledgerRows ? `<div class="ledger">${ledgerRows}</div>` : ""}
       <p class="ledger-note"><strong>${d.contact.note}</strong></p>
@@ -193,7 +188,6 @@
       <div class="room-inner">
         <div class="room-kicker">Room ${romanize(i + 1)}</div>
         <h2 class="room-title">${r.label}</h2>
-        ${r.sub ? `<p class="room-sub">${r.sub}</p>` : ""}
         ${r.body}
       </div>
     </section>
