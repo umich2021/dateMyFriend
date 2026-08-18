@@ -107,16 +107,12 @@
 
   <h1>Victor's admin panel</h1>
   <p class="sub">
-    Turn sections on or off across every site version. Changes apply
-    immediately and are shared by <code>card/</code>, <code>personal/</code>,
-    and <code>gallery/</code> — they all read the same settings.
+    Turn sections of the site on or off. Changes apply immediately.
   </p>
   <div class="note">⚠️ This is stored in this browser's localStorage only — it won't follow you to another device or browser, and clearing site data resets it.</div>
 
   <div class="preview-links">
-    <a href="../card/index.html" target="_blank">Open card site ↗</a>
-    <a href="../personal/index.html" target="_blank">Open personal site ↗</a>
-    <a href="../gallery/index.html" target="_blank">Open gallery site ↗</a>
+    <a href="../index.html" target="_blank">Open site ↗</a>
   </div>
 
   <div class="panel" id="panel"></div>
@@ -132,10 +128,8 @@
 <script src="../data/victor-data.js"></script>
 <script>
   const SECTIONS = [
-    { key: "about", name: "About", desc: "Bio, stats, and the intro section." },
-    { key: "prompts", name: "Prompts", desc: "Card-style app clone only — personal/ folds this into the About essay instead." },
-    { key: "interests", name: "Interests", desc: "Interest tags / marquee." },
-    { key: "gallery", name: "Photo gallery", desc: "Photo tiles on personal/'s homepage, and the whole 'Collection' room on gallery/." },
+    { key: "about", name: "About", desc: "Self-Portrait room — bio, stats, and the intro." },
+    { key: "gallery", name: "Photo gallery", desc: "The Collection room's photo filmstrip." },
     { key: "flags", name: "Flags", desc: "Green and red flags, mixed together in one list." },
     { key: "idealType", name: "Ideal Type", desc: "What he's looking for, plus dealbreakers." },
     { key: "values", name: "Values", desc: "Direction, family, strengths — the briefer, more serious section." },

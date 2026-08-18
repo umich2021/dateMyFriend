@@ -135,6 +135,7 @@ a{ color:inherit; }
   content:"Fig. 1"; position:absolute; bottom:14px; right:16px;
   font-family:var(--label); font-size:.68rem; letter-spacing:.1em; color:var(--ink-soft);
 }
+.portrait-plate img{ width:100%; height:100%; object-fit:cover; }
 .portrait-text p{
   font-size:1rem; line-height:1.85; color:var(--ink); margin-bottom:18px; max-width:56ch;
 }
@@ -158,7 +159,9 @@ a{ color:inherit; }
   width:100%; aspect-ratio:3/4; background:var(--bg-alt); border:1px solid var(--ink);
   display:flex; align-items:center; justify-content:center; font-size:3.6rem;
   box-shadow:0 24px 48px -26px rgba(0,0,0,.3);
+  overflow:hidden;
 }
+.plate-frame img{ width:100%; height:100%; object-fit:cover; }
 .plate-caption{
   margin-top:14px; display:flex; justify-content:space-between; align-items:baseline; gap:12px;
 }

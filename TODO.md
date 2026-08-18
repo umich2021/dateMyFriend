@@ -1,65 +1,40 @@
 # TODO
 
 ## Now
-- [ ] **Don't share any of the three site links with anyone yet** — every
-      visible "placeholder/draft" banner has been removed from the public
-      pages, which means there's no on-page warning anymore that the
-      content is fake. It still is, until this section is done.
+- [ ] **Don't share the site link with anyone yet** — every visible
+      "placeholder/draft" banner has been removed from the page, which
+      means there's no on-page warning anymore that the content is fake.
+      It still is, until this section is done.
 - [ ] Send `questionnaire.md` to Victor
 - [ ] **Get real photos from Victor — this is the single highest-impact
-      item, above any copy.** Pages currently use initials/gradient
-      placeholders instead of real images. See the photo checklist at the
-      top of `questionnaire.md`.
+      item, above any copy.** Drop them into `photos/` and point to them
+      from `data/victor-data.js` (`portrait` + each `gallery` entry's
+      `photo` field — see `photos/README.md`). See the photo checklist at
+      the top of `questionnaire.md`.
 - [ ] Swap placeholder content in `data/victor-data.js` for Victor's real
-      answers once questionnaire comes back — this single file feeds
-      `card/`, `personal/`, and `gallery/`
+      answers once questionnaire comes back
 - [ ] Get Victor's real email/phone (or confirm he wants message-only, no
       phone) for `data/victor-data.js`'s `contact` object — currently
       fake-formatted placeholders (`555` number, `@example.com`)
-- [ ] Decide whether `gallery/` is a keeper — it's a genuinely different
-      site now (see README), not just another switcher option, so it's
-      worth a real look rather than a quick toggle-through
-
-## Style
-- [x] **Decision made: `personal/index.html` is locked to Window Mode.**
-      It now hard-codes `data-theme="desktop"` and skips the switcher
-      entirely (no 🎨 button on this page, and it doesn't write to the
-      shared `victorSiteTheme` localStorage key, so it doesn't drag other
-      pages into desktop theme along with it).
-- [ ] `personal/`'s other pages (flags, ideal-type, values, friends, faq,
-      contact) still have the live switcher (5 styles) for now — decide
-      whether to lock those to Window Mode too, or leave them switchable,
-      or lock them to something else
-- [ ] `card/` still has its own switcher (same 5 styles, shared
-      `localStorage` key) — decide its fate too
-- [ ] Walk through `gallery/index.html` separately — it's the third,
-      fully independent site (no switcher, one fixed design) — decide if
-      it's a keeper, an alternate, or gets cut
-- [ ] Once the remaining pages/sites are decided, remove the switcher
-      widget + unused theme CSS/JS from whatever doesn't need it anymore
-      (don't ship a "pick your own theme" toy on the real link)
 
 ## Content
+- [x] **Decided: gallery/exhibition format is the site.** The Tinder-card
+      and "date me doc" formats that were built alongside it for
+      comparison are gone — see git history if needed.
 - [ ] Replace placeholder basics (name/age/location/job/school/height)
-- [ ] Replace placeholder bio + `aboutEssay` (personal/) / 3 prompt answers (card/)
+- [ ] Replace placeholder bio + `aboutEssay`
 - [ ] Replace placeholder interest tags
-- [ ] Replace placeholder `flags` list (green + red, currently mixed
-      together as one list)
+- [ ] Replace placeholder `flags` list (green + red, mixed together as
+      one list)
 - [ ] Replace placeholder ideal-type summary, tags, dealbreakers,
-      relationship type, and love language. **Not** the "Character
-      Select" placeholder on the Ideal Type pages — that "?" silhouette is
-      permanent by design (it represents someone Victor hasn't met yet),
-      not a stand-in for a real photo. Leave it as-is.
+      relationship type, and love language
 - [ ] Replace placeholder Values entries (direction, family, how he shows
-      up, strengths) — each now also has an `emoji` rendered as a small
-      photo-tile icon; swap those for real images too eventually
+      up, strengths)
 - [ ] Replace placeholder FAQ questions/answers
 - [ ] Replace placeholder friend reviews with real ones from real friends
       (need their okay to quote them)
-- [ ] Add real photos (need at least 1, ideally 3-5) — `personal/`'s new
-      Photos section on the homepage (`gallery` in `data/victor-data.js`)
-      has 6 labeled placeholder tiles (main, with friends, doing a hobby,
-      candid, etc.) — swap each `emoji`/`label` pair for a real image
+- [ ] Add real photos (need at least 1, ideally 3-5) — see the "Now"
+      item above
 - [ ] Double check nothing overly private goes on a page that might get
       shared/screenshotted
 - [ ] Ask Victor whether he wants `schedulingEnabled` turned on (a direct
@@ -80,7 +55,6 @@
       writes on their own.
 
 ## Polish (later)
-- [ ] Swipe gesture support on mobile (currently buttons only, `card/`)
 - [ ] Multi-photo carousel if we get more than one photo
 - [ ] Dark mode toggle
 - [ ] Consider publishing as a private Artifact link vs. hosting somewhere

@@ -1,8 +1,13 @@
 /*
-  This is the "temp database" for the whole site.
-  Every page (card/, personal/, admin/) loads this file and reads from
-  window.VictorDB. All content below is PLACEHOLDER — swap it once
-  questionnaire.md comes back from Victor.
+  This is the "database" for the site (gallery/ + admin/) — the single file
+  to edit for both text content and photos. All content below is
+  PLACEHOLDER — swap it once questionnaire.md comes back from Victor.
+
+  Photos: drop real image files into ../photos/ (e.g. photos/portrait.jpg,
+  photos/hiking.jpg) and point to them with a path like "photos/portrait.jpg"
+  in the `portrait` field below or a `photo` field on a gallery entry. Until
+  a `photo`/`portrait` path is set, those spots render an emoji/initials
+  placeholder instead — nothing breaks if photos aren't ready yet.
 
   Why a .js file and not a .json file: these pages are meant to be opened
   directly as local files (double-click, no server). Browsers block
@@ -23,33 +28,14 @@
 
     bio: "Half sarcasm, half genuine enthusiasm. Ask me about the best ramen spot in town — I have strong, unsolicited opinions.",
 
-    // Longer-form version of the same personality, used on personal/'s About
-    // section. personal/ dropped the Hinge-style Prompts page — a person
-    // spends real time on a site, not two seconds swiping, so this folds
-    // the same specific details (ramen, the crypto thing, the 5k) into
-    // actual prose instead of isolated Q&A cards.
+    // Used on the Self-Portrait room. Path to a file in ../photos/, e.g.
+    // "photos/portrait.jpg" — leave empty ("") to keep the initials plate.
+    portrait: "",
+
     aboutEssay: [
       "I build software for a living and spend the rest of my time chasing good food, better playlists, and the occasional personal best on a hiking trail. I laugh easily, cook enthusiastically, and I'm the friend who already has the group chat plans figured out.",
       "Ask me about the best ramen spot in town and I will have opinions — strong, specific, mildly exhausting ones. I've also been known to leave a party the second someone brings up crypto unprompted, and I will absolutely make you try whatever I just cooked, no exceptions.",
       "Right now I'm chasing a pretty small goal: beating my own 5k time before the leaves change. That's mostly how I operate — less about grand plans, more about picking something and quietly getting a little better at it. Fresh sheets, a good playlist on a long drive, and a board game I take slightly too seriously round out the rest.",
-    ],
-
-    // Kept for card/ only — that site is intentionally the app-style clone,
-    // so Hinge-style prompt cards fit its format. personal/ uses aboutEssay
-    // above instead.
-    prompts: [
-      {
-        label: "I'll know it's time to leave the party when...",
-        answer: "...someone starts talking about crypto unprompted.",
-      },
-      {
-        label: "My simple pleasures",
-        answer: "Fresh sheets, a good playlist on a long drive, and beating my own high score.",
-      },
-      {
-        label: "A goal I'm currently working toward",
-        answer: "Finally beating my own 5k time before the leaves change.",
-      },
     ],
 
     interests: [
@@ -57,16 +43,16 @@
       "Board Games", "Photography", "Coffee Snob", "Traveling",
     ],
 
-    // Real photos go here once they exist — until then, these render as
-    // labeled placeholder tiles on personal/ so the page doesn't feel like
-    // a wall of text. Swap each `photo` with a real image path/URL later.
+    // The Collection room's filmstrip. Add `photo: "photos/whatever.jpg"`
+    // to an entry (file lives in ../photos/) to show a real image instead
+    // of the emoji placeholder — emoji stays as a fallback either way.
     gallery: [
-      { emoji: "📸", label: "Main photo" },
-      { emoji: "🥾", label: "Doing the thing" },
-      { emoji: "👯", label: "With friends" },
-      { emoji: "😄", label: "Candid" },
-      { emoji: "🍜", label: "Ramen opinions, mid-rant" },
-      { emoji: "🎲", label: "Taking a board game too seriously" },
+      { emoji: "📸", label: "Main photo", photo: "" },
+      { emoji: "🥾", label: "Doing the thing", photo: "" },
+      { emoji: "👯", label: "With friends", photo: "" },
+      { emoji: "😄", label: "Candid", photo: "" },
+      { emoji: "🍜", label: "Ramen opinions, mid-rant", photo: "" },
+      { emoji: "🎲", label: "Taking a board game too seriously", photo: "" },
     ],
 
     // Green and red flags live together as one list now — mixed, not
@@ -87,10 +73,8 @@
     ],
 
     idealType: {
-      // No `photo` field here on purpose — the Ideal Type pages render a
-      // "character select" placeholder instead (see card/ideal-type.html
-      // and personal/ideal-type.html), since this is someone Victor
-      // hasn't met yet.
+      // No `photo` field here on purpose — this is someone Victor hasn't
+      // met yet, so The Sitter's Brief room renders text only.
       summary: "Someone who's kind first, funny second, and doesn't take themselves too seriously. Bonus points if you have a go-to karaoke song.",
       tags: ["Kind", "Funny", "Adventurous eater"],
       note: "(not a checklist — just what tends to click)",
@@ -182,7 +166,6 @@
     // edit it by hand.
     visibility: {
       about: true,
-      prompts: true,
       interests: true,
       gallery: true,
       flags: true,
